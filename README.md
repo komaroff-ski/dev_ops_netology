@@ -1,3 +1,5 @@
+### GIT
+
 # ДЗ №1
 
 Задача: организовать эффективный и стабильный процесс разработки программного обеспечения в компании.
@@ -83,4 +85,47 @@ commit 8364383c359a6b738a436d1b7745ccdce178df47
 7. Кто автор функции synchronizedWriters?
 git log -L:globalPluginDirs:plugins.go -s | grep commit
 Ни кто. Такой функции в коде нет.
+
+### Работа в терминале
+
+# ДЗ №1
+
+5:
+ОЗУ: 1024
+CPU: 2
+
+6:
+config.vm.provider "virtualbox" do |v|
+  v.memory = 1024
+  v.cpus = 2
+end
+
+8:
+history-size, строка 2629
+ignoreboth сокращение для директив ignorespace и ignoredups. Не сохранять в истории строки начинающиеся с пробела и дублирующие предыдущую запись.
+
+9: 
+Строка 1201
+Это механизм, с помощью которого могут быть сгенерированы произвольные строки.
+
+10:
+touch file_{1..100000}
+touch file_{1..300000} - Argument list too long
+Размер аргумента по умолчанию ограничен 128 кб (константа ARG_MAX)
+
+11:
+Проверка наличия катаолга /tmp
+
+12:
+vagrant@ksg:~$ mkdir /tmp/new_path_dir/
+vagrant@ksg:~$ cp /bin/bash /tmp/new_path_dir/
+vagrant@ksg:~$ PATH=/tmp/new_path_dir/:$PATH
+vagrant@ksg:~$ type -a bash
+bash is /tmp/new_path_dir/bash
+bash is /usr/bin/bash
+bash is /bin/bash
+
+13:
+at - выполняет команду в заданное время
+batch - выполняет команду когда это позволяет нагрузка на систему. По умолчанию нагрузка меньше 1,5
 

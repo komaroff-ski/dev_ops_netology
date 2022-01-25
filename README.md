@@ -129,3 +129,14 @@ bash is /bin/bash
 at - выполняет команду в заданное время
 batch - выполняет команду когда это позволяет нагрузка на систему. По умолчанию нагрузка меньше 1,5
 
+# ДЗ №2
+
+1. CD - встроенная команда (программа) командного интерпретатора bash
+2. grep -c <some_string> <some_file>
+3. systemd
+4. ls /etv 2>/dev/pts/2
+5. wc < /home/ksg/temp/res.cnf > /home/ksg/temp/res2.cnf
+6. 
+![image](https://user-images.githubusercontent.com/93157702/151010285-b43141d9-535f-4122-980b-4f33abad4797.png)
+![image](https://user-images.githubusercontent.com/93157702/151010423-412a9ce3-fe05-4b96-bc23-21dd83d3df1a.png)
+

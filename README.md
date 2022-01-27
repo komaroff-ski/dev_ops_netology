@@ -228,3 +228,19 @@ ulimit -n - максимальное кол-во открытых файловы
 ![image](https://user-images.githubusercontent.com/93157702/151410148-a9141c61-5504-4cd4-90a1-36235822af2a.png)
 Поменять можно командой ulimit -u для данной сессии или перманентно в файле /etc/systemd/system.conf, значение DefaultTasksMax
 			      
+### Файловые системы
+			      
+4. Создал разделы fdisk-ом:
+ ![image](https://user-images.githubusercontent.com/93157702/151442905-375b5b80-337e-4925-a49c-83215e00149c.png)
+			      
+5. Скопировал разделы:			      
+![image](https://user-images.githubusercontent.com/93157702/151443078-225cc0a1-d607-4de8-9caf-7f681db9939d.png)
+
+6. 			      
+![image](https://user-images.githubusercontent.com/93157702/151446076-60f39e16-b46b-4bdf-ac9a-cc717a832669.png)
+
+7.
+![image](https://user-images.githubusercontent.com/93157702/151447132-047bc278-3137-478f-b474-c94e4b94d5af.png)
+
+8.
+			      

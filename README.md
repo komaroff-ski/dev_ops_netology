@@ -199,10 +199,16 @@ batch - выполняет команду когда это позволяет �
 ![image](https://user-images.githubusercontent.com/93157702/151345126-aaa4b5b0-fb05-4ec1-b615-8324b150a862.png)
 
 2. Опции для базового мониторинга по CPU, памяти, диску и сети:
+															
 --collector.uname
 --collector.cpu
 --collector.diskstats
 --collector.netstat
 --collector.meminfo
+                              
+3.
+![image](https://user-images.githubusercontent.com/93157702/151349726-161d7791-02f3-4d07-b74f-bc0bc93fbcd9.png)
+
+4.
                               
                               

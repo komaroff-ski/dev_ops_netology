@@ -193,3 +193,16 @@ batch - выполняет команду когда это позволяет �
                +    is in the foreground process group
                               
 # ДЗ №2
+1. 
+![image](https://user-images.githubusercontent.com/93157702/151344983-634217e2-2cac-45dc-ac57-a929690067cc.png)
+
+![image](https://user-images.githubusercontent.com/93157702/151345126-aaa4b5b0-fb05-4ec1-b615-8324b150a862.png)
+
+2. Опции для базового мониторинга по CPU, памяти, диску и сети:
+--collector.uname
+--collector.cpu
+--collector.diskstats
+--collector.netstat
+--collector.meminfo
+                              
+                              

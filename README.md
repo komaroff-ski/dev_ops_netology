@@ -243,4 +243,24 @@ ulimit -n - максимальное кол-во открытых файловы
 ![image](https://user-images.githubusercontent.com/93157702/151447132-047bc278-3137-478f-b474-c94e4b94d5af.png)
 
 8.
+![image](https://user-images.githubusercontent.com/93157702/151531515-adb13cd5-4705-4b06-810c-04391e3b2e80.png)
+
+9.
+![image](https://user-images.githubusercontent.com/93157702/151532171-23ce0410-297e-4918-8a80-6399c170baa1.png)
+
+10.
+![image](https://user-images.githubusercontent.com/93157702/151534064-fb5edbf2-2134-48f0-bd32-85b1b140d010.png)
+
+14.
+![image](https://user-images.githubusercontent.com/93157702/151535734-d2da404b-29bc-48e9-b30b-f29cb23bb413.png)
+			      
+16.
+![image](https://user-images.githubusercontent.com/93157702/151536744-f6087fed-1796-496e-8080-3d9706bddc70.png)
+			      
+18.
+![image](https://user-images.githubusercontent.com/93157702/151540289-37767c26-8e3b-4165-a71c-4de68ae22749.png)
+
+19.
+![image](https://user-images.githubusercontent.com/93157702/151540766-329d8e0b-82ce-4bb1-b9ea-5b12e69bd461.png)
+			      
 			      

@@ -201,7 +201,16 @@ Host localhost
 или запустив ssh c опцией `RequestTTY Yes`
 `ssh -o 'RequestTTY YES' localhost 'tty'`
 
-13. 
+13. Получилось сделать следующее:
+
+```
+vagrant@vagrant:~$ top
+vagrant@vagrant:~$ bg top
+vagrant@vagrant:~$ job -l
+1675
+vagrant@vagrant:~$ tmux
+vagrant@vagrant:~$ reptyr 1675
+```
 
 14. Команда tee выполняет чтение из stdin и выполняет запись одновременно в stduot и файл, указанный в качестве параметра. Т.к. команда полностью выполняется под sudo, проблем с записью в файл не возникнет.
 

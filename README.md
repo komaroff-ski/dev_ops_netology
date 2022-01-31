@@ -258,7 +258,11 @@ vagrant@vagrant:~$ reptyr 1675
 1. 
 ![image](https://user-images.githubusercontent.com/93157702/151344983-634217e2-2cac-45dc-ac57-a929690067cc.png)
 
-![image](https://user-images.githubusercontent.com/93157702/151345126-aaa4b5b0-fb05-4ec1-b615-8324b150a862.png)
+![image](https://user-images.githubusercontent.com/93157702/151820817-f3227abb-c957-419a-97d0-7564a14cf85c.png)
+
+![image](https://user-images.githubusercontent.com/93157702/151820907-a09330c0-7b60-4438-9e70-38e3c8f833e2.png)
+
+![image](https://user-images.githubusercontent.com/93157702/151821123-80c149de-a565-4886-99af-55ced3f4b279.png)
 
 2. Опции для базового мониторинга по CPU, памяти, диску и сети:
 															

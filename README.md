@@ -332,5 +332,100 @@ vagrant@vagrant:~$ reptyr 1675
 
 19.
 ![image](https://user-images.githubusercontent.com/93157702/151540766-329d8e0b-82ce-4bb1-b9ea-5b12e69bd461.png)
-			      
-			      
+
+<a name="net"></a>
+## Компьютерные сети
+
+<a name="net_1"></a>	
+#### ДЗ №1
+
+1.
+![image](https://user-images.githubusercontent.com/93157702/154647903-ddc6a91f-11a9-4ed9-9e17-180bee0596ba.png)
+
+По выводу мы видим, что сайт переехал навсегда на https://.. и перенаправление по адерсу https://stackoverflow.com/
+
+2.
+![image](https://user-images.githubusercontent.com/93157702/154654691-98dba89c-e644-41d3-8532-547c1ad8b5a8.png)
+
+![image](https://user-images.githubusercontent.com/93157702/154655128-3e0a9fb7-850e-4e45-bf83-42ecdeb77a2e.png)
+
+3.
+```
+ksg@vagrant:~$ whois 46.39.45.211
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '46.39.45.0 - 46.39.45.255'
+
+% Abuse contact for '46.39.45.0 - 46.39.45.255' is 'netadm@comcor.ru'
+
+inetnum:        46.39.45.0 - 46.39.45.255
+netname:        AKADO-STOLITSA-HFC
+descr:          public net at CMTS04-E02
+country:        RU
+admin-c:        NC2391-RIPE
+tech-c:         NC2391-RIPE
+status:         ASSIGNED PA
+mnt-by:         COMTV-MNT
+mnt-lower:      COMTV-MNT
+mnt-routes:     COMTV-MNT
+created:        2013-11-29T04:57:51Z
+last-modified:  2013-11-29T04:57:51Z
+source:         RIPE
+
+role:           AKADO-Stolitsa NOC
+address:        Russia, 117535, Moscow
+address:        Varshavskoe Road, 133
+phone:          +7 (495) 662 5430
+phone:          +7 (499) 940 0044
+fax-no:         +7 (495) 737 5194
+remarks:        ----------------------------------------------
+remarks:        AKADO-Stolitsa working hours:
+remarks:        09am-6pm MSK/MSD (GMT+3/+4) work days
+remarks:        ----------------------------------------------
+abuse-mailbox:  netadm@akado-telecom.ru
+mnt-by:         COMTV-MNT
+admin-c:        OVB3-RIPE
+tech-c:         BAM1978-RIPE
+tech-c:         RAY39-RIPE
+tech-c:         KPN6-RIPE
+nic-hdl:        NC2391-RIPE
+created:        2009-11-09T11:15:13Z
+last-modified:  2021-02-17T12:19:56Z
+source:         RIPE # Filtered
+
+% Information related to '46.39.32.0/19AS15582'
+
+route:          46.39.32.0/19
+descr:          JSC "AKADO-Stolitsa"
+origin:         AS15582
+mnt-by:         COMTV-MNT
+created:        2011-06-15T09:25:33Z
+last-modified:  2011-06-15T09:25:33Z
+source:         RIPE
+
+% This query was served by the RIPE Database Query Service version 1.102.2 (WAGYU)
+```
+
+4.
+IP: 46.39.45.211
+Провайдер: AKADO-Stolitsa
+AS: 15582
+
+5. С traceroute какой-то косяк, с ходу не получилось разобраться. Предполагаю что проблема в конфигурации сети виртуальной машины:
+![image](https://user-images.githubusercontent.com/93157702/154663357-2c284c65-4607-4763-801c-f7105c8e0745.png)
+
+6. А вот mtr работает, как ни странно:
+![image](https://user-images.githubusercontent.com/93157702/154663798-506342f5-418f-46bc-9e95-3ca352b7b61a.png)
+
+7.
+![image](https://user-images.githubusercontent.com/93157702/154664277-ff0a5313-bc21-4d10-a022-5778e340beff.png)
+
+8.
+![image](https://user-images.githubusercontent.com/93157702/154666536-7aab8471-f754-42ea-a662-aac14fed32d6.png)

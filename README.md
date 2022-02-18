@@ -16,6 +16,7 @@
 5. [Компьютерные сети](#net)  
   5.1 [ДЗ №1](#net_1)  
   5.2 [ДЗ №2](#net_2)  
+  5.3 [ДЗ №3](#net_3)  
   
 ---------------
 
@@ -527,3 +528,26 @@ Linux:
 Windows:
 `arp -a` - вывод таблицы arp
 `arp -d *` - очистка всего arp кэша
+
+<a name="net_3"></a>	
+#### ДЗ №3
+
+1.
+
+![image](https://user-images.githubusercontent.com/93157702/154709697-f6701c32-091b-4b51-8b40-e12edfe58aa3.png)
+
+![image](https://user-images.githubusercontent.com/93157702/154709911-d787161b-a691-4612-98fd-38aca84b4f56.png)
+
+2.
+![image](https://user-images.githubusercontent.com/93157702/154713532-ced7d3f1-7a0e-4838-83b0-bb3e75d83eb4.png)
+
+3.
+![image](https://user-images.githubusercontent.com/93157702/154714699-f3cbc152-42af-4c84-a8ca-207b4696b458.png)
+
+4.
+![image](https://user-images.githubusercontent.com/93157702/154714774-4903d0e6-1c18-41c6-8e2c-cb2b57caecfa.png)
+
+5. Набросал типовую схему сети офиса средней компании (без адресации)
+![image](https://user-images.githubusercontent.com/93157702/154718919-f90a4298-a830-4bd4-84ed-8d8aa16a4e92.png)
+
+

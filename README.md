@@ -15,7 +15,7 @@
   4.1 [ДЗ №1](#fs_1)  
 5. [Компьютерные сети](#net)  
   5.1 [ДЗ №1](#net_1)  
-  5.2 [ДЗ №1](#net_2)  
+  5.2 [ДЗ №2](#net_2)  
   
 ---------------
 
@@ -434,7 +434,7 @@ AS: 15582
 ![image](https://user-images.githubusercontent.com/93157702/154666536-7aab8471-f754-42ea-a662-aac14fed32d6.png)
 
 <a name="net_2"></a>	
-#### ДЗ №1
+#### ДЗ №2
 
 1.
 ![image](https://user-images.githubusercontent.com/93157702/154667880-7f358487-0a00-49a7-a4dd-7e42a79f339a.png)
@@ -444,6 +444,7 @@ AS: 15582
 ![image](https://user-images.githubusercontent.com/93157702/154696604-890ecd75-eba4-4496-bdf0-74e9bd2c5019.png)
 
 2. Протокол LLDP. Реализация в linux - пакет lldpd. Просмотр информации о соседях по сети: lldpcli show neighbors
+
 3. Для разделения L2 коммутатора на несколько виртуальных сетей используется технология vlan. В linux используем пакет, который так и называется - vlan.
 Для создания vlan 200 добавляем новый интерфейс:
 `vconfig add eth0 200`

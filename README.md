@@ -553,10 +553,10 @@ Windows:
 <a name="Sec"></a>
 #### ДЗ Элементы безопасности информационных систем
 
-1,2 
+1,2  
 ![image](https://user-images.githubusercontent.com/93157702/160611418-b1eea29c-2b59-4ee7-92d8-37b66b91e8d1.png)
 
-3.
+3.  
 ![image](https://user-images.githubusercontent.com/93157702/160611546-174657b4-895a-41b6-b1a7-82b6e1855fa1.png)
 
 

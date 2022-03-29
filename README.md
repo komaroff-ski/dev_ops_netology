@@ -17,7 +17,7 @@
   5.1 [ДЗ №1](#net_1)  
   5.2 [ДЗ №2](#net_2)  
   5.3 [ДЗ №3](#net_3)  
-  
+  5.4 [Элементы безопасности информационных систем](#Sec)
 ---------------
 
 ## Работа с GIT
@@ -549,5 +549,14 @@ Windows:
 
 5. Набросал типовую схему сети офиса средней компании (без адресации)
 ![image](https://user-images.githubusercontent.com/93157702/154718919-f90a4298-a830-4bd4-84ed-8d8aa16a4e92.png)
+
+<a name="Sec"></a>
+#### ДЗ Элементы безопасности информационных систем
+
+1,2 
+![image](https://user-images.githubusercontent.com/93157702/160611418-b1eea29c-2b59-4ee7-92d8-37b66b91e8d1.png)
+
+3.
+![image](https://user-images.githubusercontent.com/93157702/160611546-174657b4-895a-41b6-b1a7-82b6e1855fa1.png)
 
 

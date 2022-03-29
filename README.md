@@ -559,4 +559,13 @@ Windows:
 3.  
 ![image](https://user-images.githubusercontent.com/93157702/160611546-174657b4-895a-41b6-b1a7-82b6e1855fa1.png)
 
+4.  
+![image](https://user-images.githubusercontent.com/93157702/160612970-0243f9f8-c8ec-4636-a870-7dbc230cb1a6.png)
 
+5.  
+![image](https://user-images.githubusercontent.com/93157702/160617961-c1dcbf85-d038-4a01-ab07-8fe0e3194780.png)
+
+6.  
+![image](https://user-images.githubusercontent.com/93157702/160620661-1bee649b-4e8b-4c5c-a2fb-547bd72f3cc0.png)
+
+7.

@@ -569,3 +569,7 @@ Windows:
 ![image](https://user-images.githubusercontent.com/93157702/160620661-1bee649b-4e8b-4c5c-a2fb-547bd72f3cc0.png)
 
 7.
+![image](https://user-images.githubusercontent.com/93157702/160624519-9fd85b20-a889-4594-a93a-5361696a8f1b.png)
+
+8.  
+![image](https://user-images.githubusercontent.com/93157702/160625093-c84f1c60-4935-4635-b0e9-c900643f99eb.png)

@@ -18,10 +18,20 @@ Ansible
 
 ![image](https://user-images.githubusercontent.com/93157702/167790125-4ab74fc7-5dbd-433a-b6c1-7874b192955d.png)
 
-![image](https://user-images.githubusercontent.com/93157702/167790169-9cc2bb98-e5e4-4d3b-81bf-4e7f01faa14c.png)
+```
+C:\Users\ksg\Desktop\DevOps\vagrant_boxes>vagrant --version
+Vagrant 2.2.19
+```
 
-![image](https://user-images.githubusercontent.com/93157702/167790204-0e7f9c1f-ef10-4a02-aae3-0e410f9a580e.png)
-
+```
+vagrant@ansible:~$ ansible --version
+ansible 2.9.6
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/vagrant/.ansible/plugins/modules', '/u                                                       sr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Nov 26 2021, 20:14:08) [GCC 9.3.0]
+```
 
 ## Задача 4 (*)  
 Воспроизвести практическую часть лекции самостоятельно.

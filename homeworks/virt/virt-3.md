@@ -40,12 +40,21 @@ https://hub.docker.com/repository/docker/komaroffski/komaroffski_nginx
 Сценарий:
 
 - Высоконагруженное монолитное java веб-приложение;
+Имеет смылс запускать на выделенной виртуалке т.к. приложение монолитное и помещать его в контейнер - нет смысла, к тому же он портребяет ресурсы.
+
 - Nodejs веб-приложение;
+Если приложение использует различные микросервисы, то имеет смысл поместить его в контейнеры. В противном случае - смысла не вижу.
+
 - Мобильное приложение c версиями для Android и iOS;
+Имеет смысл поместить в контейнеры версии приложений для Android и iOS. Источник данных - внешний.
+
 - Шина данных на базе Apache Kafka;
+
+
 - Elasticsearch кластер для реализации логирования продуктивного веб-приложения - три ноды elasticsearch, два logstash и две ноды kibana;
 - Мониторинг-стек на базе Prometheus и Grafana;
 - MongoDB, как основное хранилище данных для java-приложения;
+
 - Gitlab сервер для реализации CI/CD процессов и приватный (закрытый) Docker Registry.
 
 ## Задача 3
@@ -60,8 +69,8 @@ https://hub.docker.com/repository/docker/komaroffski/komaroffski_nginx
 
 ## Задача 4*
 
-Я немного увлекся самодеятельностью и развернул две машины с докером при помощи ansible и vagrant у себя на VirtualBox
-Прилагаю конфиги vagrant и ansible, а так же скрины машин.
+Я немного увлекся самодеятельностью и развернул две машины с докером при помощи ansible и vagrant у себя на VirtualBox.
+Прилагаю конфиги vagrant и ansible.
 
 vagrant:
 ```
@@ -145,5 +154,8 @@ ansible playbook:
       - name: Add the current user to docker group
         user: name=vagrant append=yes groups=docker
 ```
+
+![image](https://user-images.githubusercontent.com/93157702/167821713-453f9476-255f-4f59-865b-452c729c9eb5.png)
+
 
 Я понимаю, что это примитивно и много хардкода, но мне было интересно разобраться с 0.

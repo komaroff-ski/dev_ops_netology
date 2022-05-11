@@ -58,3 +58,92 @@ https://hub.docker.com/repository/docker/komaroffski/komaroffski_nginx
 
 ![image](https://user-images.githubusercontent.com/93157702/167817915-66a5ff9a-be4d-4a3c-b190-50de15fdce99.png)
 
+## Задача 4*
+
+Я немного увлекся самодеятельностью и развернул две машины с докером при помощи ansible и vagrant у себя на VirtualBox
+Прилагаю конфиги vagrant и ansible, а так же скрины машин.
+
+vagrant:
+```
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "bento/ubuntu-20.04"
+  config.vm.box_check_update = false
+
+   config.vm.define "doc1" do |doc1|
+     doc1.vm.network "private_network", ip: "192.168.33.11"
+     doc1.vm.hostname = "doc1"
+     doc1.vm.provider "virtualbox" do |vb|
+         vb.memory = "512"
+         vb.cpus = 1
+     end
+  end
+  config.vm.define "doc2" do |doc2|
+    doc2.vm.network "private_network", ip: "192.168.33.12"
+    doc2.vm.hostname = "doc2"
+    doc2.vm.provider "virtualbox" do |vb|
+        vb.memory = "512"
+        vb.cpus = 1
+    end
+  end
+  config.vm.provision "file", source: "id_rsa", destination: "/home/vagrant/.ssh/id_rsa"
+  public_key = File.read("id_rsa.pub")
+  config.vm.provision :shell, :inline =>"
+     echo 'Copying ansible-vm public SSH Keys to the VM'
+     mkdir -p /home/vagrant/.ssh
+     chmod 700 /home/vagrant/.ssh
+     echo '#{public_key}' >> /home/vagrant/.ssh/authorized_keys
+     chmod -R 600 /home/vagrant/.ssh/authorized_keys
+     echo 'Host 192.168.*.*' >> /home/vagrant/.ssh/config
+     echo 'StrictHostKeyChecking no' >> /home/vagrant/.ssh/config
+     echo 'UserKnownHostsFile /dev/null' >> /home/vagrant/.ssh/config
+     chmod -R 600 /home/vagrant/.ssh/config
+     mkdir -p /home/vagrant/nginx
+     ", privileged: false
+  config.vm.provision "file", source: "index.html", destination: "/home/vagrant/nginx/index.html"
+end
+```
+
+ansible inventory:
+```
+[docker]
+192.168.33.12
+192.168.33.13
+```
+ansible playbook:
+```
+---
+
+  - hosts: docker
+    become: yes
+    become_user: root
+    remote_user: vagrant
+
+    tasks:
+      - name: Create directory for ssh-keys
+        file: state=directory mode=0700 dest=/root/.ssh/
+
+      - name: Adding rsa-key in /root/.ssh/authorized_keys
+        copy: src=~/.ssh/id_rsa.pub dest=/root/.ssh/authorized_keys owner=root mode=0600
+        ignore_errors: yes
+
+      - name: Checking DNS
+        command: host -t A google.com
+
+      - name: Installing tools
+        apt: >
+          package={{ item }}
+          state=present
+          update_cache=yes
+        with_items:
+          - git
+          - curl
+
+      - name: Installing docker
+        shell: curl -fsSL get.docker.com -o get-docker.sh && chmod +x get-docker.sh && ./get-docker.sh
+
+      - name: Add the current user to docker group
+        user: name=vagrant append=yes groups=docker
+```
+
+Я понимаю, что это примитивно и много хардкода, но мне было интересно разобраться с 0.

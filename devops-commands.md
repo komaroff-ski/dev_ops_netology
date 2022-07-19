@@ -31,3 +31,9 @@ create unique index counry_index on clients (contry)
 
 #### Посмотреть директорию базы:
 SHOW DATA_DIRECTORY
+
+#### Получить список тиблиц в базе:
+SELECT table_name FROM information_schema.tables
+WHERE table_schema NOT IN ('information_schema','pg_catalog');
+
+#### Получить список баз

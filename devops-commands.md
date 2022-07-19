@@ -37,3 +37,4 @@ SELECT table_name FROM information_schema.tables
 WHERE table_schema NOT IN ('information_schema','pg_catalog');
 
 #### Получить список баз
+SELECT datname FROM pg_database;

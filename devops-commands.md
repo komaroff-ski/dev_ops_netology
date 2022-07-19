@@ -58,4 +58,6 @@ insert into orders (item_name, price) values
 ('Монитор', 7000),
 ('Гитара', 4000);
 
+#### Сколько записей в таблице
 
+select count (*) from clients;

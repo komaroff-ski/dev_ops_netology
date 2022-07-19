@@ -7,6 +7,7 @@
 Задача 2
 
 Список баз:
+![image](https://user-images.githubusercontent.com/93157702/179757244-665af506-f917-4b0b-abab-98b6e3979679.png)
 
 
 Описание таблиц таблиц:

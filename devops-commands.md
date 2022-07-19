@@ -45,3 +45,6 @@ psql -h 192.168.56.11 -U postgres - подключиться к серверу
 \c temp_db - подключиться к базе
 \l - список баз
 
+Операторы SQL:
+
+![image](https://user-images.githubusercontent.com/93157702/179782081-83bc5d1a-f8f1-497c-935c-08671ba98213.png)

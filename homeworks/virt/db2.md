@@ -19,3 +19,7 @@
 Список пользователей с привелегиями:
 
 ![image](https://user-images.githubusercontent.com/93157702/179763889-c7d6b2d2-f7ad-4d0e-93f4-290ded968a77.png)
+
+Задача 3
+
+![image](https://user-images.githubusercontent.com/93157702/179790356-c4304428-daea-446b-9f40-f0384887ff1a.png)

@@ -38,3 +38,10 @@ WHERE table_schema NOT IN ('information_schema','pg_catalog');
 
 #### Получить список баз
 SELECT datname FROM pg_database;
+
+#### Командная строка
+
+psql -h 192.168.56.11 -U postgres - подключиться к серверу
+\c temp_db - подключиться к базе
+\l - список баз
+

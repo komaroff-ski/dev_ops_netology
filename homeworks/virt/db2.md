@@ -15,3 +15,7 @@
 ![image](https://user-images.githubusercontent.com/93157702/179755638-7622d5e4-dc8d-44ab-81dc-648470c8f514.png)
 
 ![image](https://user-images.githubusercontent.com/93157702/179755678-38f1f572-07c6-45e1-adf7-b48533a8523d.png)
+
+Список пользователей с привелегиями:
+
+![image](https://user-images.githubusercontent.com/93157702/179763889-c7d6b2d2-f7ad-4d0e-93f4-290ded968a77.png)

@@ -22,5 +22,9 @@ alter table clients
 	foreign key (order_id) references orders(id)
 )
 
+#### Создать индекс
+
+create unique index counry_index on clients (contry)
+
 #### Посмотреть директорию базы:
 SHOW DATA_DIRECTORY

@@ -2,7 +2,7 @@
 
 Сожержимое docker-compose файла:
 
-![image](https://user-images.githubusercontent.com/93157702/179573723-3c7db45e-c226-4ca2-835d-157df56ad8f8.png)
+![image](https://user-images.githubusercontent.com/93157702/179757427-25395047-f673-4d46-b9f5-3cc59539fd1c.png)
 
 Задача 2
 

@@ -3,8 +3,11 @@
 #### Создать базу temp_db:
 create database temp_db
 
-#### Создать пользователя
-CREAtE user "test-admin-user" with password '2222'
+#### Создать пользователей и привилегии
+create user "test-admin-user" with password '2222';
+create user "test-simple-user" with password '3333';
+grant all privileges on all tables in schema public to "test-admin-user";
+grant select, insert, update, delete on all tables in schema public to "test-simple-user"
 
 #### Создать таблицу:
 

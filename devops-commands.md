@@ -48,3 +48,14 @@ psql -h 192.168.56.11 -U postgres - подключиться к серверу
 Операторы SQL:
 
 ![image](https://user-images.githubusercontent.com/93157702/179782081-83bc5d1a-f8f1-497c-935c-08671ba98213.png)
+
+#### Вставить данные в таблицу
+
+insert into orders (item_name, price) values
+('Шоколад', 10),
+('Принтер', 3000),
+('Книга', 500),
+('Монитор', 7000),
+('Гитара', 4000);
+
+

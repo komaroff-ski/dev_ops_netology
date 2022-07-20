@@ -23,3 +23,12 @@
 Задача 3
 
 ![image](https://user-images.githubusercontent.com/93157702/179790356-c4304428-daea-446b-9f40-f0384887ff1a.png)
+
+Задача 4
+
+![image](https://user-images.githubusercontent.com/93157702/180020851-5a3a2525-8cc6-4129-a5bb-8a06b5f62d38.png)
+
+![image](https://user-images.githubusercontent.com/93157702/180020945-c59925fa-b62e-4bf4-b341-136710f1544d.png)
+
+![image](https://user-images.githubusercontent.com/93157702/180021010-dac88067-0e8e-4b89-9c37-0f25cea0d090.png)
+

@@ -61,3 +61,17 @@ insert into orders (item_name, price) values
 #### Сколько записей в таблице
 
 select count (*) from clients;
+
+#### Анализ производительности запроса
+
+explain select last_name from clients where order_id notnull
+Расшивровка вывода:
+Используется Seq Scan — последовательное, блок за блоком, чтение данных таблицы clients cost=0.00 - затраты на получение первой строки, 13.30 - затраты на получение всех строк 
+rows — приблизительное количество возвращаемых строк при выполнении операции Seq Scan 
+width — средний размер одной строки в байтах.
+
+#### Удалить базу:
+
+drop database temp_db with (force);
+
+

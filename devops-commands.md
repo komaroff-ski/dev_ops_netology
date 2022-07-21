@@ -1,3 +1,48 @@
+## Docker
+
+#### Скачать образ с докерхаба:
+
+docker pull ссылка на образ
+
+#### Запустить образ (на примере postges)
+
+docker container run -p 5432:5432 --detach --volume /home/vagrant/db/pgsql/:/home/vagrant/db/pgsql/ postgres
+
+-p - проброс портов из контейнера на хостовую машину один к одному
+-- volume подключить папку с хоста в папку внутри контейнера
+postgres - image name
+
+#### Зайти в контейнер интерактивно
+
+docker container exec -it 5f141371eacf /bin/bash
+
+#### Запустить образ в docker compose
+
+В папке с конфигурационным файлом (docker-compose.yml) запустить:
+
+docker compose up -d
+
+#### Пример docker-compose.yml для postgres
+
+'''
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 11111
+      PGDATA: "/home/vagrant/db/pgsql/new"
+    ports:
+      - "5432:5432"
+    volumes:
+     - /home/vagrant/db/pgsql/new:/home/vagrant/db/pgsql/new
+     - /home/backup/db/pgsql:/home/backup/db/pgsql
+'''
+
 ## Postgres
 
 #### Создать базу temp_db:

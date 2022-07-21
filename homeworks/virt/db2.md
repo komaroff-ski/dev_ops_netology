@@ -46,23 +46,23 @@ width — средний размер одной строки в байтах.
 ## Задача 6
 
 #### Console:
-'''
+```
 docker container exec -i f38d3b3deb7e bash -c 'pg_dump -Ft -U postgres temp_db > /home/backup/db/pgsql/backup.tar'
 docker compose stop
 cd ../postgres-back/
 docker compose up -d
-'''
+```
 
 #### T-SQL:
-'''
+```
 create database temp_db;
 create user "test-admin-user" with password '2222';
 create user "test-simple-user" with password '3333';
 grant all privileges on all tables in schema public to "test-admin-user";
 grant select, insert, update, delete on all tables in schema public to "test-simple-user"
-'''
+```
 
 #### Console:
-'''
+```
 docker container exec -i 5f141371eacf bash -c 'pg_restore -U postgres -Ft -d temp_db /home/backup/db/pgsql/backup.tar'
-'''
+```

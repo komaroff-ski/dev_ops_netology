@@ -13,3 +13,12 @@
 выхода из psql
 \q
 
+## Задача 2
+
+Ответ: title, 16
+```
+select attname, avg_width from pg_stats
+where tablename = 'orders' 
+and avg_width = (select max(avg_width) from pg_stats where tablename = 'orders'); 
+```
+

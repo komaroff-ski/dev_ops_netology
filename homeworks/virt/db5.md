@@ -27,20 +27,17 @@ https://hub.docker.com/repository/docker/komaroffski/elastic
 
 ![image](https://user-images.githubusercontent.com/93157702/181743408-888373dc-4903-43ae-82a3-64e859a66e80.png)
 
-
+Создайте индекс `test` с 0 реплик и 1 шардом и **приведите в ответе** список индексов.
 ![image](https://user-images.githubusercontent.com/93157702/181743208-5a44317e-b1e3-48d5-8f13-70db2a359ae7.png)
 
-Создайте индекс `test` с 0 реплик и 1 шардом и **приведите в ответе** список индексов.
 
 [Создайте `snapshot`](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-take-snapshot.html) 
 состояния кластера `elasticsearch`.
 
 **Приведите в ответе** список файлов в директории со `snapshot`ами.
-
 ![image](https://user-images.githubusercontent.com/93157702/181742866-b58e4876-b520-4bd4-adae-25185dfada5a.png)
 
 Удалите индекс `test` и создайте индекс `test-2`. **Приведите в ответе** список индексов.
-
 ![image](https://user-images.githubusercontent.com/93157702/181743893-47808af4-be58-431f-b9e1-a983c3f9d066.png)
 
 [Восстановите](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshots-restore-snapshot.html) состояние

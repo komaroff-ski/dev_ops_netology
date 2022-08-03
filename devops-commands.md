@@ -122,4 +122,83 @@ width — средний размер одной строки в байтах.
 
 drop database temp_db with (force);
 
+## ElasticSearch
 
+#### 0. Качаем имидж, при необходимости вносим изменения в докер манифест и собираем свой образ. Пример манифеста:
+---
+FROM elasticsearch:7.17.4
+RUN apt update
+RUN apt install nano
+RUN echo "path.data: /var/lib/" >> /usr/share/elasticsearch/config/elasticsearch.yml
+RUN echo "node.name: netology_test" >> /usr/share/elasticsearch/config/elasticsearch.yml
+RUN chmod 0777 /var/lib/
+---
+
+#### 1. Разворачиваем в докере. Рекомендация - не менее 3-х нод для систем с промышленной эксплуатацией.
+Пример запуска в докере
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" my-elastic
+Пример compose-файла:
+---
+version: '3'
+services:
+  elasticsearch:
+    image: my-elastic
+    container_name: my_elasticsearch
+    restart: always
+    environment:
+      - discovery.type=single-node
+      - network.host=0.0.0.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+     - /home/vagrant/elastic/db:/home/vagrant/elastic/db
+---
+
+#### 2.Основные команды:
+
+Статус кластера:
+curl -X GET "localhost:9200/_cluster/health?pretty"
+
+Получить список индексов:
+curl -X GET "localhost:9200/_cat/indices?pretty"
+
+Получить список шардов:
+curl -X GET "localhost:9200/_cat/shards?pretty"
+
+Создать индекс ind-1. Рекомендуемое кол-во шард - nodes*3, кол-во реплик nodes*2
+
+curl -X PUT "localhost:9200/ind-1?pretty" -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,  
+      "number_of_replicas": 0 
+    }
+  }
+}
+'
+
+Удалить индексы *ind
+
+curl -X DELETE "localhost:9200/ind-*?pretty"
+
+Зарегистрировать репозиторий со снапшотами (так же, нужно указать корневую дерикторию в переменной `path.repo` в `elasticsearch.yml`и перезапустить `elasticsearch`)
+
+curl -X PUT "localhost:9200/_snapshot/netology_backup?pretty" -H 'Content-Type: application/json' -d'
+{
+  "type": "fs",
+  "settings": {
+    "location": "/usr/share/elasticsearch/snapshots"
+  }
+}
+'
+
+Создать снапшот:
+curl -X PUT "localhost:9200/_snapshot/netology_backup/%3Ctest_snapshot_%7Bnow%2Fd%7D%3E?pretty"
+
+Восстановить index_name из снапшота:
+curl -X POST "localhost:9200/_snapshot/netology_backup/test_snapshot_2022.07.29/_restore?pretty" -H 'Content-Type: application/json' -d'
+{
+  "indices": "index_name"
+'

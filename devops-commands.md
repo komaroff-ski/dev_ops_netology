@@ -135,9 +135,9 @@ RUN chmod 0777 /var/lib/
 ```
 
 #### 1. Разворачиваем в докере. Рекомендация - не менее 3-х нод для систем с промышленной эксплуатацией.
-Пример запуска в докере
-docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" my-elastic
-Пример compose-файла:
+Пример запуска в докере  
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" my-elastic  
+Пример compose-файла:  
 ```
 version: '3'
 services:
@@ -157,17 +157,17 @@ services:
 
 #### 2.Основные команды:
 
-Статус кластера:
-curl -X GET "localhost:9200/_cluster/health?pretty"
+Статус кластера:  
+curl -X GET "localhost:9200/_cluster/health?pretty"  
 
-Получить список индексов:
-curl -X GET "localhost:9200/_cat/indices?pretty"
+Получить список индексов:  
+curl -X GET "localhost:9200/_cat/indices?pretty"  
 
-Получить список шардов:
-curl -X GET "localhost:9200/_cat/shards?pretty"
+Получить список шардов:  
+curl -X GET "localhost:9200/_cat/shards?pretty"  
 
-Создать индекс ind-1. Рекомендуемое кол-во шард - nodes*3, кол-во реплик nodes*2
-
+Создать индекс ind-1. Рекомендуемое кол-во шард - nodes*3, кол-во реплик nodes*2  
+```
 curl -X PUT "localhost:9200/ind-1?pretty" -H 'Content-Type: application/json' -d'
 {
   "settings": {
@@ -178,13 +178,15 @@ curl -X PUT "localhost:9200/ind-1?pretty" -H 'Content-Type: application/json' -d
   }
 }
 '
+```
 
 Удалить индексы *ind
-
+```
 curl -X DELETE "localhost:9200/ind-*?pretty"
+```
 
 Зарегистрировать репозиторий со снапшотами (так же, нужно указать корневую дерикторию в переменной `path.repo` в `elasticsearch.yml`и перезапустить `elasticsearch`)
-
+```
 curl -X PUT "localhost:9200/_snapshot/netology_backup?pretty" -H 'Content-Type: application/json' -d'
 {
   "type": "fs",
@@ -193,12 +195,16 @@ curl -X PUT "localhost:9200/_snapshot/netology_backup?pretty" -H 'Content-Type: 
   }
 }
 '
-
+```
 Создать снапшот:
+```
 curl -X PUT "localhost:9200/_snapshot/netology_backup/%3Ctest_snapshot_%7Bnow%2Fd%7D%3E?pretty"
+```
 
 Восстановить index_name из снапшота:
+```
 curl -X POST "localhost:9200/_snapshot/netology_backup/test_snapshot_2022.07.29/_restore?pretty" -H 'Content-Type: application/json' -d'
 {
   "indices": "index_name"
 '
+```

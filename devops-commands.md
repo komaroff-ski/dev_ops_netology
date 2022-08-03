@@ -125,20 +125,20 @@ drop database temp_db with (force);
 ## ElasticSearch
 
 #### 0. Качаем имидж, при необходимости вносим изменения в докер манифест и собираем свой образ. Пример манифеста:
----
+```
 FROM elasticsearch:7.17.4
 RUN apt update
 RUN apt install nano
 RUN echo "path.data: /var/lib/" >> /usr/share/elasticsearch/config/elasticsearch.yml
 RUN echo "node.name: netology_test" >> /usr/share/elasticsearch/config/elasticsearch.yml
 RUN chmod 0777 /var/lib/
----
+```
 
 #### 1. Разворачиваем в докере. Рекомендация - не менее 3-х нод для систем с промышленной эксплуатацией.
 Пример запуска в докере
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" my-elastic
 Пример compose-файла:
----
+```
 version: '3'
 services:
   elasticsearch:
@@ -153,7 +153,7 @@ services:
       - 9300:9300
     volumes:
      - /home/vagrant/elastic/db:/home/vagrant/elastic/db
----
+```
 
 #### 2.Основные команды:
 

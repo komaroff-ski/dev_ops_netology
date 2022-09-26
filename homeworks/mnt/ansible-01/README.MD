@@ -20,4 +20,7 @@
 
 ![image](https://user-images.githubusercontent.com/93157702/192367852-e405ba4d-1a1d-42db-86d9-5c031f59bc1f.png)
 
+9. Посмотрите при помощи `ansible-doc` список плагинов для подключения. Выберите подходящий для работы на `control node`.
+
+![image](https://user-images.githubusercontent.com/93157702/192373323-71ff5159-9a38-45bc-aef9-d1954dd56dcf.png)
 

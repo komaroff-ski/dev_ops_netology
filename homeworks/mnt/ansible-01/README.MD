@@ -24,3 +24,7 @@
 
 ![image](https://user-images.githubusercontent.com/93157702/192373323-71ff5159-9a38-45bc-aef9-d1954dd56dcf.png)
 
+11. Запустите playbook на окружении `prod.yml`. При запуске `anst ible` должен запросить у вас пароль. Убедитесь что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
+
+![image](https://user-images.githubusercontent.com/93157702/192378580-7ff0bc64-0ce9-4cc7-9af1-b02b4219e9c3.png)
+

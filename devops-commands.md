@@ -161,10 +161,10 @@ services:
 curl -X GET "localhost:9200/_cluster/health?pretty"  
 
 Получить список индексов:  
-curl -X GET "localhost:9200/_cat/indices?pretty"  
+curl -X GET "localhost:9200/_cat/indices?pretty"
 
 Получить список шардов:  
-curl -X GET "localhost:9200/_cat/shards?pretty"  
+curl -X GET "localhost:9200/_cat/shards?pretty"
 
 Создать индекс ind-1. Рекомендуемое кол-во шард - nodes*3, кол-во реплик nodes*2  
 ```

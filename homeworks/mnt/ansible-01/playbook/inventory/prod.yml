@@ -1,12 +1,11 @@
 deb:
   hosts: 
     192.168.56.11:
-    192.168.56.12:
   vars:
     ansible_user: 
       vagrant
     ansible_private_key_file: /home/komaroff/DevOps/vagrant_boxes/id_rsa
-    connection: smart
+    ansible_connection: smart
 el:
   hosts: 
     192.168.56.12:
@@ -14,4 +13,9 @@ el:
     ansible_user: 
       vagrant
     ansible_private_key_file: /home/komaroff/DevOps/vagrant_boxes/id_rsa
-    connection: smart
+    ansible_connection: smart
+local:
+  hosts: 
+    localhost:
+      ansible_connection: local
+      ansible_user: komaroff

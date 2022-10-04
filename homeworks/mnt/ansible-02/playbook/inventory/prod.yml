@@ -1,0 +1,20 @@
+---
+elasticsearch:
+  hosts: 
+    192.168.56.20:
+    192.168.56.21:
+    192.168.56.22:      
+  vars:
+    ansible_user: 
+      vagrant
+    ansible_private_key_file: /home/komaroff/DevOps/vagrant_boxes/elk/id_rsa
+    ansible_connection: smart
+
+kibana:
+  hosts: 
+    192.168.56.23:    
+  vars:
+    ansible_user: 
+      vagrant
+    ansible_private_key_file: /home/komaroff/DevOps/vagrant_boxes/elk/id_rsa
+    ansible_connection: smart

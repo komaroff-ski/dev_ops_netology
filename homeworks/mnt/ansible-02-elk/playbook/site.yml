@@ -1,0 +1,151 @@
+---
+
+- name: Install Java
+  hosts: all
+  tasks:
+    - name: Set facts for Java 11 vars
+      set_fact:
+        java_home: "/opt/jdk/{{ java_jdk_version }}"
+      tags: java
+    - name: Upload .tar.gz file containing binaries from local storage
+      copy:
+        src: "{{ java_oracle_jdk_package }}"
+        dest: "/tmp/jdk-{{ java_jdk_version }}.tar.gz"
+        mode: 0755
+      register: download_java_binaries
+      until: download_java_binaries is succeeded
+      tags: java
+    - name: Ensure installation dir exists
+      become: true
+      file:
+        state: directory
+        path: "{{ java_home }}"
+        mode: 0644
+      tags: java
+    - name: Extract java in the installation directory
+      become: true
+      unarchive:
+        copy: false
+        src: "/tmp/jdk-{{ java_jdk_version }}.tar.gz"
+        dest: "{{ java_home }}"
+        extra_opts: [--strip-components=1]
+        creates: "{{ java_home }}/bin/java"
+        mode: 0755
+      tags:
+        - java
+    - name: Export environment variables
+      become: true
+      template:
+        src: jdk.sh.j2
+        dest: /etc/profile.d/jdk.sh
+        mode: 0755
+      tags: java
+
+- name: Install Elasticsearch
+  hosts: elasticsearch
+  become: true
+  tasks:
+    - name: installing 'apt-transport-https'
+      apt:
+        name: apt-transport-https
+        update_cache: true
+    - name: Change elastic repo
+      shell: echo "deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main" >> /etc/apt/sources.list.d/elastic-7.x.list
+      args:
+        executable: /bin/bash
+    - name: installing elasticsearch
+      apt:
+        name: elasticsearch
+        update_cache: true
+    - name: Set environment Elastic
+      template:
+        src: templates/elk.sh.j2
+        dest: /etc/profile.d/elk.sh
+        mode: 0755
+      tags: elastic service autorun and run
+    - name: set elastic to autorun and start install
+      systemd:
+        name: elasticsearch
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Copy config file
+      template:
+        src: templates/elasticsearch.yml
+        dest: /etc/elasticsearch/elasticsearch.yml
+        mode: 0644
+      notify: restart_elastic
+  handlers:
+    - name: restart_elastic
+      service: name=elasticsearch state=restarted
+      listen: restart elasticsearch
+
+- name: Install Kibana
+  hosts: kibana
+  become: true
+  tasks:
+    - name: installing 'apt-transport-https'
+      apt:
+        name: apt-transport-https
+        update_cache: true
+    - name: Change kibana repo
+      shell: echo "deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main" >> /etc/apt/sources.list.d/elastic-7.x.list
+      args:
+        executable: /bin/bash  
+    - name: installing kibana
+      apt:
+        name: kibana
+        update_cache: true
+    - name: set kibana to autorun and start install
+      systemd:
+        name: kibana
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Copy config file
+      template:
+        src: templates/kibana.yml
+        dest: /etc/kibana/kibana.yml
+        mode: 0644
+      notify: restart_kibana
+  handlers:
+    - name: restart_kibana
+      service: name=kibana state=restarted
+      listen: restart kibana
+- name: Install logstash
+  hosts: logstash
+  become: true
+  tasks:
+    - name: installing 'apt-transport-https'
+      apt:
+        name: apt-transport-https
+        update_cache: true
+    - name: Change logstash repo
+      shell: echo "deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main" >> /etc/apt/sources.list.d/elastic-7.x.list
+      args:
+        executable: /bin/bash  
+    - name: installing logstash
+      apt:
+        name: logstash
+        update_cache: true
+    - name: set logstash to autorun and start install
+      systemd:
+        name: logstash
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Copy config file
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: 0644
+      with_items:
+        - {src: 'templates/logstash/input.conf',dest: '/etc/logstash/conf.d/input.conf'}
+        - {src: 'templates/logstash/output.conf',dest: '/etc/logstash/conf.d/output.conf'}
+        - {src: 'templates/logstash/filter.conf',dest: '/etc/logstash/conf.d/filter.conf'}
+      
+      notify: restart_logstash
+  handlers:
+    - name: restart_logstash
+      service: name=logstash state=restarted
+      listen: restart logstash

@@ -1,5 +1,5 @@
 ---
-clickhouse:
+elasticsearch:
   hosts: 
     192.168.56.20:
     # 192.168.56.21:
@@ -10,9 +10,18 @@ clickhouse:
     ansible_private_key_file: /home/komaroff/DevOps/vagrant_boxes/elk/id_rsa
     ansible_connection: smart
 
-vector:
+kibana:
   hosts: 
-    192.168.56.20:    
+    192.168.56.23:    
+  vars:
+    ansible_user: 
+      vagrant
+    ansible_private_key_file: /home/komaroff/DevOps/vagrant_boxes/elk/id_rsa
+    ansible_connection: smart
+
+logstash:
+  hosts: 
+    192.168.56.24:    
   vars:
     ansible_user: 
       vagrant

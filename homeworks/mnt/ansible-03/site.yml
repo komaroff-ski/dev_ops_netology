@@ -1,0 +1,117 @@
+---
+
+- name: Install Clickhouse
+  hosts: clickhouse
+  become: true
+  handlers:
+    - name: restart clickhouse service
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: restart
+  tasks:
+    - block:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+          with_items: "{{ clickhouse_packages }}"
+      rescue:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+    - name: Install clickhouse packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - clickhouse-common-static-{{ clickhouse_version }}.rpm
+          - clickhouse-client-{{ clickhouse_version }}.rpm
+          - clickhouse-server-{{ clickhouse_version }}.rpm
+    - name: Set clickhouse to autorun and start
+      become: true
+      systemd:
+        name: clickhouse-server
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Create database
+      ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
+      register: create_db
+      failed_when: create_db.rc != 0 and create_db.rc !=82
+      changed_when: create_db.rc == 0
+    - name: Copy config file
+      template:
+        src: ./config/config.xml
+        dest: /etc/clickhouse-server/config.xml
+        mode: 0644
+      notify: restart clickhouse service
+
+- name: Install Vector
+  hosts: vector
+  become: true
+  handlers:
+    - name: restart vector service
+      ansible.builtin.service:
+        name: vector
+        state: restart
+  tasks:
+    - name: Download vector
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rpm"
+        dest: "./vector-{{ vector_version }}-1.x86_64.rpm"
+    - name: Install vector
+      become: true
+      ansible.builtin.yum:
+        name: "vector-{{ vector_version }}-1.x86_64.rpm"
+    - name: set vector to autorun and start install
+      ansible.builtin.systemd:
+        name: vector
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Copy config file
+      ansible.builtin.template:
+        src: ./config/vector.toml
+        dest: /etc/vector/vector.toml
+        mode: 0644
+      notify: restart vector service
+
+- name: Install LightHouse
+  hosts: lighthouse
+  become: true
+  handlers:
+    - name: retart nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: restart
+  tasks:
+    - name: Install utils
+      become: true
+      ansible.builtin.yum:
+        name: 
+          - epel-release
+          - mc
+          - zip
+          - unzip
+        state: present
+    - name: Install nginx
+      become: true
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+    - name: set nginx to autorun and start install
+      ansible.builtin.systemd:
+        name: nginx
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Download lighthouse to local folder
+      ansible.builtin.get_url:
+        url: "https://github.com/VKCOM/lighthouse/archive/refs/heads/master.zip"
+        dest: "./lighthouse.zip"
+    - name: unzip lighthouse
+      become: true
+      ansible.builtin.command: "unzip ./lighthouse.zip -d /usr/share/nginx/html/"
+    - name: copy lighthouse to nginx folder
+      become: true
+      ansible.builtin.command: "mv /usr/share/nginx/html/lighthouse-master/ /usr/share/nginx/html/lighthouse/"

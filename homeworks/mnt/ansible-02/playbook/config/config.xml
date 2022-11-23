@@ -184,10 +184,10 @@
 
     <!-- Default values - try listen localhost on IPv4 and IPv6. -->
     <!--
-    <listen_host>::1</listen_host>
     -->
     <listen_host>{{ ansible_ssh_host }}</listen_host>
     <listen_host>127.0.0.1</listen_host>
+    <listen_host>::1</listen_host>
     -->
 
     <!-- Don't exit if IPv6 or IPv4 networks are unavailable while trying to listen. -->

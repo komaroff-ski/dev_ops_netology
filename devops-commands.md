@@ -208,3 +208,48 @@ curl -X POST "localhost:9200/_snapshot/netology_backup/test_snapshot_2022.07.29/
   "indices": "index_name"
 '
 ```
+
+#### Справка по Vagrant на русском
+https://spec-zone.ru/vagrant/vagrantfile/ssh_settings
+
+
+#### Terraform + Yandex Cloud
+
+1. Инициализация клиента (если еще не сделано)
+```
+yc init
+```
+2. Создаем сетевые зоны;
+
+3. Далее, идем в web-интерфейс yandex.cloud и смотрим кредитансы для того, чтобы в дальнейшем использовать их в терраформе:
+  cloud_id  = "b1g0drs0h158qiurq3qa"
+  folder_id = "b1g3i641nh19u19bfr2q"
+  zone      = "ru-central1-a"
+
+4. Там же, получаем OAUTH Token:
+  token     = "AQAEA7qhzo99AATuwfR1EuruNUlDsu6XzQmOCfE"
+
+5. Чтобы получить список доступных образов, выполните следующую команду:
+```
+yc compute image list --folder-id standard-images
+```
+
+Теперь все готово для создания машин с помощью terraform
+
+1. В каталого с файлами terraform делаем:
+```
+teraform init
+```
+готовим конфигурационный файл (см примеры)
+
+тестовый прогон конфига:
+
+terraform plan
+
+применение конфига, создание сетей, подсетей и машин:
+
+terraform apply
+
+удаление сетей, подсетей и машин:
+
+terraform destroy

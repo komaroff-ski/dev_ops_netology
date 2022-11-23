@@ -2,7 +2,7 @@
 
 Описание подготовленого playbook-файла site.yml:
 
-Ссылка на playbook: 
+Ссылка на playbook: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/ansible-03/site.yml
 
 
 Данный плейбук предназначен для автоматизированной установки и настройки сервисов clickhouse (база данных для хранения лог-файлов) и vector (фильтрация и преобразование поступающих лог-файлов, передача выходных данных в clickhouse) и lighthouse (визулизация логов).

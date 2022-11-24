@@ -1,7 +1,7 @@
 ---
 clickhouse:
   hosts: 
-    158.160.47.136:
+    62.84.118.151:
     # 192.168.56.21:
     # 192.168.56.22:      
   vars:
@@ -12,7 +12,7 @@ clickhouse:
 
 vector:
   hosts: 
-    158.160.46.60:    
+    84.201.159.173:    
   vars:
     ansible_user: 
       centos
@@ -21,7 +21,7 @@ vector:
 
 lighthouse:
   hosts: 
-    158.160.41.38:    
+    62.84.118.63:    
   vars:
     ansible_user: 
       centos

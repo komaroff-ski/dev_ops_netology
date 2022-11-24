@@ -49,8 +49,6 @@
 - name: Install Vector
   hosts: vector
   become: true
-  vars:
-    - vector_version: "0.20.1"
   handlers:
     - name: restart vector service
       ansible.builtin.service:

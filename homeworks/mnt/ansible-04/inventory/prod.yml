@@ -1,0 +1,29 @@
+---
+clickhouse:
+  hosts: 
+    158.160.41.60:
+    # 192.168.56.21:
+    # 192.168.56.22:      
+  vars:
+    ansible_user: 
+      centos
+    ansible_private_key_file: ./terraform/ssh_keys/id_rsa
+    ansible_connection: smart
+
+vector:
+  hosts: 
+    158.160.43.251:    
+  vars:
+    ansible_user: 
+      centos
+    ansible_private_key_file: ./terraform/ssh_keys/id_rsa
+    ansible_connection: smart
+
+lighthouse:
+  hosts: 
+    158.160.43.251:    
+  vars:
+    ansible_user: 
+      centos
+    ansible_private_key_file: ./terraform/ssh_keys/id_rsa
+    ansible_connection: smart

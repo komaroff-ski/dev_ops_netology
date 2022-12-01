@@ -1,0 +1,10 @@
+---
+     - src: https://github.com/komaroff-ski/ksg_clickhouse.git
+       version: "v1.0.2"
+       name: clickhouse
+     - src: https://github.com/komaroff-ski/ksg_vector.git
+       version: "v1.0.1"
+       name: vector
+     - src: https://github.com/komaroff-ski/ksg_lighthouse.git
+       version: "v1.0.1"
+       name: lihgthouse

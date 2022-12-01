@@ -1,0 +1,40 @@
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  become: true
+  pre_tasks:
+  - name: disable_ipv6
+    ansible.builtin.shell: echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+
+  - name: restart_network
+    ansible.builtin.service:
+      name: network
+      state: restarted
+  roles:
+    - clickhouse
+
+- name: Install Vector
+  hosts: vector
+  become: true
+  pre_tasks:
+  - name: disable_ipv6
+    ansible.builtin.shell: echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+  - name: restart network
+    ansible.builtin.service:
+      name: network
+      state: restarted
+  roles:
+    - vector
+
+- name: Install LightHouse
+  hosts: lighthouse
+  become: true
+  pre_tasks:
+  - name: disable_ipv6
+    ansible.builtin.shell: echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+  - name: restart network
+    ansible.builtin.service:
+      name: network
+      state: restarted
+  roles:
+    - lighthouse

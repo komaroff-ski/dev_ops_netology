@@ -1,0 +1,6 @@
+---
+# handlers file for ksg_vector
+    - name: restart vector service
+      ansible.builtin.service:
+        name: vector
+        state: restarted

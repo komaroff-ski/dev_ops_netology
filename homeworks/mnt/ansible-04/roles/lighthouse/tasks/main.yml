@@ -1,0 +1,31 @@
+---
+# tasks file for ksg_lighthouse
+    - name: Install utils
+      become: true
+      ansible.builtin.yum:
+        name: 
+          - epel-release
+          - zip
+          - unzip
+        state: present
+    - name: Install nginx
+      become: true
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+    - name: set nginx to autorun and start install
+      ansible.builtin.systemd:
+        name: nginx
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Download lighthouse to local folder
+      ansible.builtin.get_url:
+        url: "https://github.com/VKCOM/lighthouse/archive/refs/heads/master.zip"
+        dest: "./lighthouse.zip"
+    - name: unzip lighthouse
+      become: true
+      ansible.builtin.command: "unzip ./lighthouse.zip -d /usr/share/nginx/html/"
+    - name: copy lighthouse to nginx folder
+      become: true
+      ansible.builtin.command: "mv /usr/share/nginx/html/lighthouse-master/ /usr/share/nginx/html/lighthouse/"

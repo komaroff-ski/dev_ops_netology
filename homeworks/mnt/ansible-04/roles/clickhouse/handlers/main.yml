@@ -1,0 +1,6 @@
+---
+# handlers file for ksg_clickhouse
+- name: restart clickhouse service
+  ansible.builtin.service:
+    name: clickhouse-server
+    state: restarted

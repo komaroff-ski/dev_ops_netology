@@ -3,8 +3,11 @@
   hosts: clickhouse
   become: true
   pre_tasks:
-  - name: disable_ipv6
-    ansible.builtin.shell: echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+  - name: Copy sysctl.conf
+    ansible.builtin.template:
+      src: ./config/sysctl.conf
+      dest: /etc/sysctl.conf
+      mode: 0644
 
   - name: restart_network
     ansible.builtin.service:
@@ -17,9 +20,13 @@
   hosts: vector
   become: true
   pre_tasks:
-  - name: disable_ipv6
-    ansible.builtin.shell: echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
-  - name: restart network
+  - name: Copy sysctl.conf
+    ansible.builtin.template:
+      src: ./config/sysctl.conf
+      dest: /etc/sysctl.conf
+      mode: 0644
+
+  - name: restart_network
     ansible.builtin.service:
       name: network
       state: restarted
@@ -30,9 +37,13 @@
   hosts: lighthouse
   become: true
   pre_tasks:
-  - name: disable_ipv6
-    ansible.builtin.shell: echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf && echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
-  - name: restart network
+  - name: Copy sysctl.conf
+    ansible.builtin.template:
+      src: ./config/sysctl.conf
+      dest: /etc/sysctl.conf
+      mode: 0644
+
+  - name: restart_network
     ansible.builtin.service:
       name: network
       state: restarted

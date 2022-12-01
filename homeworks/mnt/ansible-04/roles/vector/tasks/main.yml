@@ -1,0 +1,22 @@
+---
+# tasks file for ksg_vector
+    - name: Download vector
+      ansible.builtin.get_url:
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.x86_64.rpm"
+        dest: "./vector-{{ vector_version }}-1.x86_64.rpm"
+    - name: Install vector
+      become: true
+      ansible.builtin.yum:
+        name: "vector-{{ vector_version }}-1.x86_64.rpm"
+    - name: set vector to autorun and start install
+      ansible.builtin.systemd:
+        name: vector
+        daemon_reload: true
+        enabled: true
+        state: started
+    - name: Copy config file
+      ansible.builtin.template:
+        src: ./templates/vector.toml
+        dest: /etc/vector/vector.toml
+        mode: 0644
+      notify: restart vector service

@@ -1,0 +1,6 @@
+---
+# handlers file for ksg_lighthouse
+    - name: retart nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: restarted

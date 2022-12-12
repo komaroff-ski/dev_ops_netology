@@ -1,0 +1,6 @@
+projectKey=komaroff_ski
+serverUrl=http://158.160.36.238:9000
+serverVersion=9.1.0.47736
+dashboardUrl=http://158.160.36.238:9000/dashboard?id=komaroff_ski
+ceTaskId=AYUHcCTVecPH38i_AffU
+ceTaskUrl=http://158.160.36.238:9000/api/ce/task?id=AYUHcCTVecPH38i_AffU

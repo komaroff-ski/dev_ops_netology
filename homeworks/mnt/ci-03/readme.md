@@ -10,4 +10,4 @@
 
 #### 2. Файл metadata Nexus: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/ci-03/mvn/maven-metadata.xml
 
-#### 3. 
+#### 3. Исправленный pom.xml для Maven: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/ci-03/mvn/pom.xml

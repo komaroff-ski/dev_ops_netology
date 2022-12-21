@@ -53,3 +53,4 @@
 
 #### Ответ:
 нет 300-х ответов :)
+Правильная формула будет выглядеть так: (summ_2xx_requests + summ_3xx_requests)/summ_all_requests

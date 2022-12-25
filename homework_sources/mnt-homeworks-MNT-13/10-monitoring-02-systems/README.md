@@ -27,10 +27,8 @@ P.S.: если при запуске некоторые контейнеры б�
 `./data:/var/lib:Z`
 
 4. Изучите список [telegraf inputs](https://github.com/influxdata/telegraf/tree/master/plugins/inputs).
-    - Добавьте в конфигурацию telegraf плагин - [disk](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/disk):
-    ```
-    [[inputs.disk]]
-      ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
+    - Добавьте в конфигурацию telegraf плагин - [disk](https://github.com/inflpip install influxdbuxdata/telegraf/tree/master/plugins/inputs/disk):
+
     ```
     - Так же добавьте в конфигурацию telegraf плагин - [mem](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mem):
     ```

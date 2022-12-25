@@ -19,7 +19,7 @@ Pull:
     - Nagios: pull
 
 
-'''
+```
 komaroff@HP-Book:~/DevOps/dev_ops_netology/homeworks/mnt/mon-02/sandbox$ curl http://localhost:8086/ping -v
 *   Trying 127.0.0.1:8086...
 * TCP_NODELAY set
@@ -88,11 +88,12 @@ komaroff@HP-Book:~/DevOps/dev_ops_netology/homeworks/mnt/mon-02/sandbox$ curl ht
 < Date: Wed, 28 Apr 2021 10:50:54 GMT
 < 
 * Connection #0 to host localhost left intact
-'''
+```
+
+![image](https://user-images.githubusercontent.com/93157702/209483375-e7ec1e99-f76a-4ea2-927f-c3f8f58198af.png)
 
 
+![image](https://user-images.githubusercontent.com/93157702/209483378-72add4b3-52d5-4b44-b7b7-c2e52594795c.png)
 
 
-
-
-'''
+![image](https://user-images.githubusercontent.com/93157702/209483380-ad301f7f-5cbe-4c65-8704-80c8ee2f2b13.png)

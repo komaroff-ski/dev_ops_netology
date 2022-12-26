@@ -21,3 +21,7 @@
 
 - Количество места на файловой системе  
 ![image](https://user-images.githubusercontent.com/93157702/209573813-f097f7b1-bb58-4fa3-87ef-e298404817d3.png)
+
+## Задание 3
+Прикрутил алерты:
+![image](https://user-images.githubusercontent.com/93157702/209576683-f58c83b4-6150-4d0a-8c30-a7432eb9e9e1.png)

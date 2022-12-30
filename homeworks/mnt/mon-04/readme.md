@@ -4,9 +4,9 @@
 
 В ходе выполнения задания, возникла неободимость внести правки в конфигурационные файлы. Прикладываю ссылки на них тут:  
 
-https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/configs/filebeat.yml
-https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/configs/logstash.conf
-https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/docker-compose.yml
+https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/configs/filebeat.yml  
+https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/configs/logstash.conf  
+https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/docker-compose.yml  
 
 #### Скрин docker ps  
 ![image](https://user-images.githubusercontent.com/93157702/210108994-e9fae2ad-e286-4edb-9bb6-503f2622eebf.png)

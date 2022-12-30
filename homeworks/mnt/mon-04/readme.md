@@ -2,7 +2,7 @@
 
 ## Задание 1  
 
-В ходе задания, возникла неободимость внести правки в конфигурационные файлы. Прикладываю ссылки на них тут:  
+В ходе выполнения задания, возникла неободимость внести правки в конфигурационные файлы. Прикладываю ссылки на них тут:  
 
 https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/configs/filebeat.yml
 https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/mnt/mon-04/help/configs/logstash.conf

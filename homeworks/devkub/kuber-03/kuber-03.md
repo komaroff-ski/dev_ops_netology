@@ -20,7 +20,8 @@
 Убедиться, что nginx не стартует. В качестве Init-контейнера взять busybox.
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/b8dd0749-e389-413b-903b-55afd1e5285c)
 
-Создать и запустить Service. Убедиться, что Init запустился.
+Создать и запустить Service. Убедиться, что Init запустился.  
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/346c1413-11f8-4ca5-8c56-059111e1be6e)
 
-Ссылка на deployment: 
+Ссылка на deployment: https://github.com/komaroff-ski/dev_ops_netology/blob/8bbd7c2590fbdafb2cc25035e7979b4f3724894b/homeworks/devkub/kuber-03/nginx-depl.yaml
+

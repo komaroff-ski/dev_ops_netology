@@ -10,6 +10,7 @@
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/50e201d8-7dac-4c9d-9e58-5eff51c6b2ea)
 
 5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.  
+
 Манифест frontent и backend: https://github.com/komaroff-ski/dev_ops_netology/blob/2cc07e33e24f5109e7bb9b9e2fb9711aed78b0b0/homeworks/devkub/kuber-05/nginx-depl.yaml
 
 Манифест сервиса: https://github.com/komaroff-ski/dev_ops_netology/blob/2cc07e33e24f5109e7bb9b9e2fb9711aed78b0b0/homeworks/devkub/kuber-05/service.yaml
@@ -22,4 +23,5 @@
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/f2265c4b-b959-44dd-904d-5cd2ddef3e1a)
 
 4. Предоставить манифесты и скриншоты или вывод команды п.2.  
+
 Манифест ingress: https://github.com/komaroff-ski/dev_ops_netology/blob/2cc07e33e24f5109e7bb9b9e2fb9711aed78b0b0/homeworks/devkub/kuber-05/ingress.yaml

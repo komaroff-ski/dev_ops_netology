@@ -11,7 +11,7 @@
 
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/a52bd178-c0f0-499b-9653-4840e478f45f)
 
-Ссылка на деплоймент: 
+Ссылка на деплоймент: https://github.com/komaroff-ski/dev_ops_netology/blob/b28cc1554583c74b8779c2c6ef58fb8c58d6bed1/homeworks/devkub/kuber-06/my-app-depl.yaml
 
 
 

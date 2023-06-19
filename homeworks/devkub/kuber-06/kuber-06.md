@@ -25,4 +25,4 @@
 
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/89db64b8-b835-405b-8827-28037f6fd0ff)
 
-Ссылка на демонсет: 
+Ссылка на демонсет: https://github.com/komaroff-ski/dev_ops_netology/blob/86a21ee98517ca57c282b0664f8ca9b21155cce1/homeworks/devkub/kuber-06/mtool-ds.yaml

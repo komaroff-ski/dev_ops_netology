@@ -13,8 +13,8 @@
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/9aea1e17-8e68-43be-a6f3-a6019f2b33ab)
 
 
-5. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV. Продемонстрировать что произошло с файлом после удаления PV.   Пояснить, почему.
-Файл остался на диске т.к. действует политика persistentVolumeReclaimPolicy: Retain  
+5. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV. Продемонстрировать что произошло с файлом после удаления PV.   Пояснить, почему.  
+   - Файл остался на диске т.к. действует политика persistentVolumeReclaimPolicy: Retain  
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/58de52e5-3a3a-4c5e-aa62-3af3a109902b)
 
 

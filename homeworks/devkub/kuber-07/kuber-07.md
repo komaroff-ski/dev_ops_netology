@@ -18,8 +18,8 @@
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/58de52e5-3a3a-4c5e-aa62-3af3a109902b)
 
 
-6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
-Приложение: https://github.com/komaroff-ski/dev_ops_netology/blob/7a678638777c9049e6e645115774eb5d1bef2f87/homeworks/devkub/kuber-07/my-app-depl.yaml
+6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.  
+Приложение: https://github.com/komaroff-ski/dev_ops_netology/blob/7a678638777c9049e6e645115774eb5d1bef2f87/homeworks/devkub/kuber-07/my-app-depl.yaml  
 PV: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/pv-nfs.yaml
 
 

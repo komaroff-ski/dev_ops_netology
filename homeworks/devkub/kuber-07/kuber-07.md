@@ -20,8 +20,8 @@
 
 
 6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.  
-Приложение:  
-PV: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/pv-nfs.yaml
+Приложение:  https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/my-app-depl_local_pv.yaml  
+PV: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/pv-local.yaml  
 
 
 #### Задание 2

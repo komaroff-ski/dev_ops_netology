@@ -24,4 +24,8 @@
 PV: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/pv-local.yaml  
 
 
-#### Задание 2
+#### Задание 2  
+
+
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/9b01c2f6-62bf-45f0-a478-2d1aaa86ff50)

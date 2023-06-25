@@ -26,6 +26,16 @@ PV: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/
 
 #### Задание 2  
 
+Создать Deployment приложения, которое может хранить файлы на NFS с динамическим созданием PV.
 
-
+1. Включить и настроить NFS-сервер на MicroK8S.  
+2. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.  
+3. Продемонстрировать возможность чтения и записи файла изнутри пода.
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/9b01c2f6-62bf-45f0-a478-2d1aaa86ff50)
+
+   
+4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.  
+
+Приложение:  https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/my-app-depl_local_pv.yaml  
+SC: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/pv-local.yaml  
+

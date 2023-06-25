@@ -36,6 +36,6 @@ PV: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/
    
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.  
 
-Приложение:  https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/my-app-depl_local_pv.yaml  
-SC: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/pv-local.yaml  
+Приложение:  https://github.com/komaroff-ski/dev_ops_netology/blob/21c4f9a2f2a47c726eb6f4f7562a347b88086646/homeworks/devkub/kuber-07/my-app-depl_nfs.yaml  
+SC: https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/devkub/kuber-07/sc-nfs.yaml  
 

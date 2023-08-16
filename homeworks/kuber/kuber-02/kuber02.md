@@ -84,6 +84,3 @@ kube-system   replicaset.apps/registry                                1         
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/7ef66f1d-560c-4eb2-829a-81e6081654af)  
 
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/1d87ee1d-4dab-4316-a762-e78cd880bcab)
-
-
-Конфигурация kubespray: 

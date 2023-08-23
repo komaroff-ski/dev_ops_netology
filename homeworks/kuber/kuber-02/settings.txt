@@ -1,0 +1,19 @@
+k8s-m1.me ip=192.168.50.163
+k8s-m2.me ip=192.168.50.164
+k8s-m3.me ip=192.168.50.165
+k8s-w1.me ip=192.168.50.166
+k8s-w2.me ip=192.168.50.51
+k8s-w3.me ip=192.168.50.168
+
+echo -e "\n$USER ALL=(ALL) NOPASSWD: ALL\n" | sudo tee -a /etc/sudoers
+cd .ssh
+cat id_rsa.pub >> authorized_keys
+chmod -R 600 authorized_keys
+echo 'Host 192.168.*.*' >> config
+echo 'StrictHostKeyChecking no' >> config
+echo 'UserKnownHostsFile /dev/null' >> config
+sudo service ssh restart
+
+ansible-playbook -u skomarov -i /inventory/local/hosts.ini cluster.yml -b -v --private-key=ssh_keys/id_rsa
+
+ansible-playbook -u skomarov -i inventory/local/hosts.ini scale.yml -b -v --private-key=ssh_keys/id_rsa

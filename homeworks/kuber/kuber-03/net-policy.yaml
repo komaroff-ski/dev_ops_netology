@@ -1,0 +1,61 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-any-frontent-backend
+  namespace: app
+spec:
+  selector: app == 'backend-service'
+  types:
+    - Ingress
+    - Egress
+  ingress:
+    - action: Allow
+      metadata:
+        annotations:
+          from: frontend
+          to: backend
+      source:
+        selector: app == 'frontend-service'
+      destination:
+  egress:
+    - action: Allow
+---
+
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-any-backend-cache
+  namespace: app
+spec:
+  selector: app == 'cache-service'
+  types:
+    - Ingress
+    - Egress
+  ingress:
+    - action: Allow
+      metadata:
+        annotations:
+          from: backend
+          to: cache
+      source:
+        selector: app == 'backend-service'
+      destination:
+
+  egress:
+    - action: Allow
+---
+
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: default-policy
+  namespace: app
+spec:
+  types:
+    - Ingress
+    - Egress
+  ingress:
+    - action: Deny
+  egress:
+    - action: Allow
+---    

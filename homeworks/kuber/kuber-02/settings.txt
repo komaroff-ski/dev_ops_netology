@@ -14,6 +14,6 @@ echo 'StrictHostKeyChecking no' >> config
 echo 'UserKnownHostsFile /dev/null' >> config
 sudo service ssh restart
 
-ansible-playbook -u skomarov -i /inventory/local/hosts.ini cluster.yml -b -v --private-key=ssh_keys/id_rsa
+ansible-playbook -u skomarov -i inventory/local/hosts.ini cluster.yml -b -v --private-key=ssh_keys/id_rsa
 
 ansible-playbook -u skomarov -i inventory/local/hosts.ini scale.yml -b -v --private-key=ssh_keys/id_rsa

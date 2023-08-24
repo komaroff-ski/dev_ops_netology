@@ -10,7 +10,7 @@
 
 #### Ответ:
 Для ограничения доступа использовал calico network policy  
-Файл конфигурации сетевой политики: homeworks/kuber/kuber-03/net-policy.yaml  
+Файл конфигурации сетевой политики: https://github.com/komaroff-ski/dev_ops_netology/blob/c79428bebbb4468a1a5a2a387416422f57bdadb8/homeworks/kuber/kuber-03/net-policy.yaml  
 
 Информация о созданных подах:
 

@@ -32,8 +32,8 @@
 Для максимального сокращения времени обновления выставляем параметры:  
 
 ```    rollingUpdate:
-       maxSurge: 60%
-       maxUnavailable: 80%
+       maxSurge: 4
+       maxUnavailable: 4
 ```
 
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/2c35d678-dc91-47e4-9f7e-8ea7a7126ed0)

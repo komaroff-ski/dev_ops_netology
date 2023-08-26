@@ -10,8 +10,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-       maxSurge: 20%
-       maxUnavailable: 80%
+       maxSurge: 4
+       maxUnavailable: 4
   selector:
     matchLabels:
       app: nginx

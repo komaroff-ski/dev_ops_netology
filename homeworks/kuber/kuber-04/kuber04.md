@@ -32,13 +32,23 @@
 Для максимального сокращения времени обновления выставляем параметры:  
 
 ```    rollingUpdate:
-       maxSurge: 20%
-       maxUnavailable: 80%
+       maxSurge: 4
+       maxUnavailable: 4
 ```
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/2c35d678-dc91-47e4-9f7e-8ea7a7126ed0)
 
 Делаем обновление 1.19 -> 1.20:
 
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/66ab258a-f060-45bb-a079-384e6cb049b2)
 
+Делаем обновление 1.19 -> 1.28:
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/1ba26856-706c-46a6-a838-db1b0fc72e0c)
+
+Откатываемся к предыдущему релизу:
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/7d70f58d-1b83-4d75-87b1-f15766df3caf)
 
 
 ## Дополнительные задания — со звёздочкой*

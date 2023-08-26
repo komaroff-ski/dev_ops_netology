@@ -32,7 +32,7 @@
 Для максимального сокращения времени обновления выставляем параметры:  
 
 ```    rollingUpdate:
-       maxSurge: 20%
+       maxSurge: 60%
        maxUnavailable: 80%
 ```
 

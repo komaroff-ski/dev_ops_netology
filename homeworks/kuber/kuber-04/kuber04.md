@@ -65,9 +65,16 @@
 
 Для реализации стратегии Canary развернул istio+kiali+prometheus, задеплоил две версии тестового приложения с сервисом, а так же Gateway, VirtualSerivce и DestinationRule для реализации корректной маршрутизации трафика с тестовой машины (mtool) к целевым нодам через ingress istio.
 
-Ссылка на конфигурацию приложения:
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/5e53c317-a141-4e1c-89fb-f61b8ee5c91d)
 
-Адрес ингреса (для теста использовал внутренний ip):
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/e9a3e067-e5e7-4cfd-a195-a4a42137ba6e)
+
+
+Ссылка на конфигурацию приложения:
+- https://github.com/komaroff-ski/dev_ops_netology/blob/14b93c1be3b93b9c53eac315cd4a4b83c540980f/homeworks/kuber/kuber-04/backend.yaml
+- https://github.com/komaroff-ski/dev_ops_netology/blob/main/homeworks/kuber/kuber-04/istio.yaml
+
+Адрес ингреса (для теста использовал внутренний ip):  
 
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/c9223b00-95f7-4e1d-ab2f-8d6a286705e9)
 

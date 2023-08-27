@@ -61,5 +61,34 @@
 2. При помощи разных ConfigMap сделать две версии приложения — веб-страницы.
 3. С помощью ingress создать канареечный деплоймент, чтобы можно было часть трафика перебросить на разные версии приложения.
 
-s
+#### Ответ:
 
+Для реализации стратегии Canary развернул istio+kiali+prometheus, задеплоил две версии тестового приложения с сервисом, а так же Gateway, VirtualSerivce и DestinationRule для реализации корректной маршрутизации трафика с тестовой машины (mtool) к целевым нодам через ingress istio.
+
+Ссылка на конфигурацию приложения:
+
+Адрес ингреса (для теста использовал внутренний ip):
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/c9223b00-95f7-4e1d-ab2f-8d6a286705e9)
+
+Генерируем трафик с пода mtool:  
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/df499972-fe60-477b-b1f1-56a28d099f20)
+
+Начинаем постепенно переводить трафик с v1 на v2
+
+100% трафика на v1:  
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/091cc3da-cd3b-4461-ba3a-4609acf6e480)
+
+90% трафика на v1, 10% трафика на v2:  
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/b689d29e-bf8e-4223-993f-80fc38a0ab99)
+
+50% трафика на v1, 50% трафика на v2:  
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/6ac57a75-7a60-46a7-90f0-3ea010749f3e)
+
+100% трафика на v2:  
+
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/f8f63722-9892-4d30-af18-1ce5a37799a9)

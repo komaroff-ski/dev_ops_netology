@@ -14,14 +14,17 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 Ответ:  
 
 1. Создаем namespace-ы и устанавливаем приложение:  
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/7163e9e2-fcb0-42fb-988b-2687d693297e)
 
 
 2. Смотрим логи пода:  
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/ed0a3a28-c826-4fcd-9266-77a5da0d783d)
 
 
 3. Видим, что проблема в том, что сервис не может найти хост auth-db. Проблема в том, что при обращении к хостам в других namespace необходимо указывать полный адрес (fqdn). Вносим правки в деплой: while true; do curl auth-db.data.svc.cluster.local; sleep 5; done  
 
 4. Применяем новые параметры и смотрим логи:  
+![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/a06e5dc6-7e1e-4c76-8866-1430d63bd9fd)
 
 
-Видим что все работает, проблема решена.  
+#### Видим что все работает, проблема решена.  

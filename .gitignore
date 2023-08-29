@@ -2,3 +2,5 @@
 *.tar.gz
 *.rar
 homeworks/kuber/kuber-02/kubespray
+id_rsa
+id_rsa.pub

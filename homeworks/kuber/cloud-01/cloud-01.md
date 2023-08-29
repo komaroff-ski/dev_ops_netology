@@ -19,13 +19,15 @@
 
 Ссылка на конфигурация terraform: https://github.com/komaroff-ski/dev_ops_netology/blob/2904039f177a4cb3571ecc9e3aa19181ddba0408/homeworks/kuber/cloud-01/main.tf  
 
-Созданная инфраструктура:  
+#### Созданная инфраструктура:  
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/c6b4cb9a-81d3-448c-9cee-386b7824501e)
 
 
-Проверка работы интернета с машины в сети public:  
+#### Проверка работы интернета с машины в сети public:  
+
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/2866236d-5993-42cc-95ca-0a5631c3fbf8)
 
 
-Проверка работы интернета с машины в сети private:  
+#### Проверка работы интернета с машины в сети private:  
+
 ![image](https://github.com/komaroff-ski/dev_ops_netology/assets/93157702/13b2ecef-337f-48e0-9b8d-b28cf9a9d05b)

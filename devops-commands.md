@@ -4,6 +4,13 @@
 
 docker pull ссылка на образ
 
+#### Загрузить образ на докерхаб:
+
+docker login -u username
+docker push username/image:tag
+Пример:
+docker push komaroffski/nginx-app:latest
+
 #### Запустить образ (на примере postges)
 
 docker container run -p 5432:5432 --detach --volume /home/vagrant/db/pgsql/:/home/vagrant/db/pgsql/ postgres
@@ -253,3 +260,21 @@ terraform apply
 удаление сетей, подсетей и машин:
 
 terraform destroy
+
+#### Kuber
+
+Опубликовать сервис на адресе ноды (пример):
+
+kubectl --namespace monitoring port-forward --address 192.168.2.31 svc/grafana 3000
+
+Опубликовать сервис на всех адресах ноды (пример):
+
+kubectl port-forward --address 0.0.0.0 pod/mypod 8888:5000
+
+#### Установка gitlab runner
+
+helm install gitlab-runner --namespace ng-app \
+  --set gitlabUrl=https://ksggit.gitlab.yandexcloud.net \
+  --set runnerRegistrationToken=GR1348941B1t5YuyCUoFzVs_Bz12o \
+  --set rbac.create=true \
+  gitlab/gitlab-runner
